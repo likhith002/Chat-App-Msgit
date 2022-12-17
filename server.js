@@ -2,11 +2,14 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
-const { connect } = require("./Config/dbconnection");
-const userRoutes = require("./Routes/userRoutes");
-const chatRoutes = require("./Routes/chatRoutes");
-const messageRoutes = require("./Routes/messageRoutes");
-const { notFound, errorHandler } = require("./Middlewares/errorMiddleware");
+const { connect } = require("./Backend/Config/dbconnection");
+const userRoutes = require("./Backend/Routes/userRoutes");
+const chatRoutes = require("./Backend/Routes/chatRoutes");
+const messageRoutes = require("./Backend/Routes/messageRoutes");
+const {
+  notFound,
+  errorHandler,
+} = require("./Backend/Middlewares/errorMiddleware");
 const path = require("path");
 //for .env file
 

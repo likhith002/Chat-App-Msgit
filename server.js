@@ -24,9 +24,9 @@ const PORT = process.env.PORT || 5000;
 
 // app.get("/api/chat/:id", (req, res) => {});
 
-app.get("/", (req, res) => {
-  res.send("backend runnung");
-});
+// app.get("/", (req, res) => {
+//   res.send("backend runnung");
+// });
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);

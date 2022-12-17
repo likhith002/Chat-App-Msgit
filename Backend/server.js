@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const cors = require("cors");
 const dotenv = require("dotenv");
 const { connect } = require("./Config/dbconnection");
 const userRoutes = require("./Routes/userRoutes");
@@ -9,6 +9,8 @@ const messageRoutes = require("./Routes/messageRoutes");
 const { notFound, errorHandler } = require("./Middlewares/errorMiddleware");
 const path = require("path");
 //for .env file
+
+app.use(cors());
 dotenv.config();
 
 app.use(express.json());
@@ -19,9 +21,9 @@ const PORT = process.env.PORT || 5000;
 
 // app.get("/api/chat/:id", (req, res) => {});
 
-// app.get("/", (req, res) => {
-//   res.send("backend runnung");
-// });
+app.get("/", (req, res) => {
+  res.send("backend runnung");
+});
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);

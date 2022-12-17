@@ -1,4 +1,4 @@
-/frontend/node_modules/ 
-/frontend/build
+!iceberg/static/icon
 /node_modules
-.env
+/.env
+
